@@ -36,3 +36,40 @@
   margin: 5px 0;
   font-size: var(--font-reg);
 }
+
+/* Style for the carousel control buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Semi-transparent black background */
+  border-radius: 50% !important; /* Round the edges */
+  width: 50px !important; /* Button size */
+  height: 50px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: absolute !important; /* Ensure the buttons are positioned absolutely */
+  top: 50% !important; /* Center them vertically */
+  transform: translateY(-50%) !important; /* Adjust vertical position */
+}
+
+.carousel-control-prev {
+  left: 10px !important; /* Adjust position to the left */
+}
+
+.carousel-control-next {
+  right: 10px !important; /* Adjust position to the right */
+}
+
+/* Add a hover effect */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.75) !important; /* Darker background on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2) !important; /* Add a shadow effect */
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  outline: none !important; /* Remove the outline when the button is focused */
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6) !important; /* Add a subtle glow when focused */
+}
+
