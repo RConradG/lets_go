@@ -46,8 +46,9 @@ class Address(models.Model):
     street_number = models.IntegerField()
     street_name = models.CharField(max_length=100)
     city = models.CharField(max_length = 100)
-    state = models.charField(max_length=20)
-    zipcode = models.IntegerField(max_length=5)
+    state = models.CharField(max_length=20)
+    zipcode = models.IntegerField()
+    
 class Vendor(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='vendor')
     vendorType = models.CharField(
@@ -66,7 +67,7 @@ class Event(models.Model):
     vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='event')
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    location = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='location')
+    location = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='event_location')
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     start_time = models.TimeField()
@@ -74,18 +75,18 @@ class Event(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     
 class SavedEvents(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_id')
-    event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_id')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='events')
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='saved_events')
     saved_at = models.DateTimeField(auto_now_add=True)    
 
 class Follows(models.Model):
-    followingUserId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following_user_id')
-    followedUserId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followed_user_id')
+    followingUserId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='following')
+    followedUserId = models.ForeignKey(User, on_delete=models.CASCADE, related_name='followers')
     created_at = models.DateTimeField(auto_now_add=True)
     
 class Posts(models.Model):
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_id')
-    event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_id')
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+    event_id = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='posts')
     title = models.CharField(max_length=100)
     body = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
