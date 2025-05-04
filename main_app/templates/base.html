@@ -20,13 +20,13 @@
     <header>
       <div class="header-logo-container">
         <a href="/">
-          <img src="/static/images/iCollect_logo2.png" alt="The iCollect Logo" />
+          <img src="/static/images/letsgo_logo_2.jpg" alt="Let's Go Logo" />
         </a>
       </div>
       <nav>
         <ul>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'collections-index' %}">All Events</a></li>
+            <li><a href="{% url 'events-index' %}">All Events</a></li>
             <li><a href="{% url 'event-create' %}">Add an Event</a></li>
             <li><a href="{% url 'about' %}">About</a></li>
             <li>

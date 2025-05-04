@@ -71,7 +71,7 @@ def add_event(request):
             new_event.vendor = request.user.vendor  
             
             new_event.save()
-            return redirect('home')
+            return redirect('events-index')
     else:
         form = EventForm()
 
@@ -139,4 +139,4 @@ class EventDelete(DeleteView):
     model = Event
     
     def get_success_url(self):
-        return reverse('event-detail', args=[self.object.event.id])
+        return reverse('events-index')
