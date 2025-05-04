@@ -6,8 +6,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Item, Collection, Category
-from .forms import ItemForm
+from .models import Item, Collection, Category, Vendor, Event, SavedEvents, Address, Posts, Follows
+from .forms import ItemForm, EventForm
  
 def home(request):
     return render(request, 'home.html')
@@ -38,6 +38,14 @@ def collection_detail(request, collection_id):
         'item_form': item_form
     })
     
+def event_detail(request, event_id):
+    event = Event.objects.get(id=event_id)
+    event_form=EventForm()
+    return render(request, 'events/detail.html', {
+        'event': event,
+        'event_form': event_form
+    })
+    
 @login_required   
 def add_item(request, collection_id):
     form = ItemForm(request.POST)
@@ -48,6 +56,21 @@ def add_item(request, collection_id):
         new_item.save()
         
     return redirect('collection-detail', collection_id=collection_id)
+
+def add_event(request):
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            new_event = form.save(commit=False)
+            
+            new_event.vendor = request.user.vendor  
+            
+            new_event.save()
+            return redirect('home')
+    else:
+        form = EventForm()
+
+    return render(request, 'events/event_form.html', {'form': form})
 
 @login_required
 def update_item(request, collection_id):

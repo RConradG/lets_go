@@ -1,6 +1,7 @@
-from django.contrib.auth.models import User
 from django.db import models
+from django import forms
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -42,6 +43,26 @@ VENDOR_TYPES = (
         ('C', 'Crafts'),
 )
 
+ROLES = (
+    ('U', 'USER'),
+    ('V', 'VENDOR'),
+    ('P', 'PROMOTER')
+)
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_name = models.CharField(max_length=100)
+    email_address = forms.EmailField(required=True)
+    role = models.CharField(
+        max_length=1,
+        choices=ROLES,
+        default =ROLES[0][0],
+    )
+    # foodPreferences
+    # following
+    # followers
+    created_at = models.DateTimeField(auto_now_add=True)
+
 class Address(models.Model):
     street_number = models.IntegerField()
     street_name = models.CharField(max_length=100)
@@ -54,7 +75,7 @@ class Vendor(models.Model):
     vendorType = models.CharField(
         max_length=1,
         choices=VENDOR_TYPES,
-        default=VENDOR_TYPES[0][0]
+        default=VENDOR_TYPES[0][0],
     )
     primary_contact_name = models.CharField(max_length=100)
     business_name = models.CharField(max_length=100)
@@ -64,10 +85,16 @@ class Vendor(models.Model):
     
     
 class Event(models.Model):
-    vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='event')
+    # TODO: uncomment vendor_id
+    # Don't forget to uncomment vendor_id 
+    # vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='event')
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
-    location = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='event_location')
+    location_street_number = models.IntegerField()
+    location_street_name = models.CharField(max_length=100)
+    location_city = models.CharField(max_length=100)
+    location_state = models.CharField(max_length=100)
+    location_zipcode = models.IntegerField()
     start_date = models.DateField(null=True, blank=True)
     end_date = models.DateField(null=True, blank=True)
     start_time = models.TimeField()

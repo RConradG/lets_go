@@ -73,3 +73,15 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.6) !important; /* Add a subtle glow when focused */
 }
 
+#carouselExampleIndicators {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 400px; /* Optional: Control height */
+  object-fit: cover;
+}
+

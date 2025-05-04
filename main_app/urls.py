@@ -9,6 +9,7 @@ urlpatterns = [
     path('collections/', views.collections_index, name='collections-index'),
     path('collections/<int:collection_id>', views.collection_detail, name='collection-detail'),
     path('collections/create/', views.CollectionCreate.as_view(), name='collection-create'),
+    path('event/create/', views.add_event, name='event-create'),
     path('collections/<int:pk>/update/', views.CollectionUpdate.as_view(), name='collection-update'),
     path('collections/<int:pk>/delete/', views.CollectionDelete.as_view(), name='collection-delete'),
     path('collections/<int:collection_id>/add-item/', views.add_item, name='add-item'),
