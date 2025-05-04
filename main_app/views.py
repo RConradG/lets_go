@@ -20,6 +20,11 @@ def collections_index(request):
     collections = Collection.objects.filter(user=request.user)
     return render(request, 'collections/index.html', {'collections': collections})
 
+def events_index(request):
+    # events = Event.objects.filter(user=request.user) ; will user later
+    events = Event.objects.all()
+    return render(request, 'events/index.html', {'events': events})
+
 @login_required
 def items(request):
     items = Item.objects.all()
@@ -122,3 +127,16 @@ class ItemDelete(LoginRequiredMixin, DeleteView):
     
     def get_success_url(self):
         return reverse('collection-detail', args=[self.object.collection.id])
+    
+class EventUpdate(UpdateView):
+    model = Event
+    fields = '__all__'
+    
+    def get_success_url(self):
+        return reverse('event-detail', args=[self.object.id])
+    
+class EventDelete(DeleteView):
+    model = Event
+    
+    def get_success_url(self):
+        return reverse('event-detail', args=[self.object.event.id])

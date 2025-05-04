@@ -90,6 +90,7 @@ class Event(models.Model):
     # vendor_id = models.ForeignKey(Vendor, on_delete=models.CASCADE, related_name='event')
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True)
+    location_name = models.CharField(max_length=100)
     location_street_number = models.IntegerField()
     location_street_name = models.CharField(max_length=100)
     location_city = models.CharField(max_length=100)
