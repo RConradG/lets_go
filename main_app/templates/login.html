@@ -3,31 +3,45 @@
 {% load static %}
 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/colors.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
 {% endblock %}
 
 
 {% block content %}
-<section class="logo-container">
-  <div class="cat-container">
-    <img 
+<div class="event-container">
+  {% if user.is_authenticated %}
+    <a href="{% url 'events-index' %}">
+      <img 
+        src="{% static 'images/lets_go_logo_2.svg' %}"
+        alt="let's go logo"
+        class='logo-container'
+        />
+      </a>
+  {% else %}
+    <a href="/">
+      <img 
       src="{% static 'images/lets_go_logo_2.svg' %}"
       alt="let's go logo"
-      />
-    </div>
-  <div class="background-image">
-    
-  </div>
+      class='logo-container'
+    />
+    </a>
+  {% endif %}
+</div>
+
 </section>
 {% if not user.is_authenticated %}
-  <section>
-    <form action="{% url 'home' %}" method="post" class="login">
+  <section class="login-container">
+    <form action="" method="post" class="login" autocomplete="off">
       <h1>Login</h1>
-      {% csrf_token %} {{ form.as_p }}
+      {% csrf_token %}
+      {{ form.as_p }}
       <input type="hidden" name="next" value="{{ next }}" />
       <button type="submit" class="btn submit">Login</button>
     </form>
-</section>
+  </section>
 {% endif %}
+
+
 
 {% endblock %}
