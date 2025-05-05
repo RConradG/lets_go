@@ -37,3 +37,31 @@ td > textarea {
   align-self: flex-end;
   margin-right: 40px;
 }
+
+/* Style for the checkbox label */
+.checkbox-label {
+  font-size: 18px; /* Adjust this to your desired font size */
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.5; /* Adjust if needed */
+}
+
+/* Ensure the checkbox itself has proper spacing */
+.checkbox-label input {
+  margin-right: 5px;
+}
+
+/* Style the 'Yes' text inside the span */
+.checkbox-label span {
+  font-size: 18px; /* Match this to the label font size */
+  font-weight: normal; /* Or adjust to your needs */
+  margin-left: 8px; /* Space between checkbox and text */
+}
+
+/* Ensure table data cells have appropriate font size */
+td {
+  font-size: var(--font-l); /* Or use a specific size if needed */
+}
+

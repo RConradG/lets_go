@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/collections/collection-index.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <h1>Your Saved Events</h1>
+  <section class="card-container">
+    {% for event in events %}
+      <div class="card">
+        <a href="{% url 'event-detail' event.id %}">
+          <div class="card-content">
+            <div class="card-img-container">
+              <img src="{% static 'images/letsgo_logo_1.jpg' %}" alt="lets go logo" />
+            </div>
+            <h2 class="card-title">{{ event.title }}</h2>
+            <p><small>{{ event.description }}</small></p>
+            <p><small>{{ event.start_date }}, {{ event.start_time }}</small></p>
+            <p><small>{{ event.location_name }}</small></p>
+          </div>
+        </a>
+
+        {% if event in saved_events %}
+          <!-- If the event is saved by the user -->
+          <form action="{% url 'save-event' event.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Unsave Event</button>
+          </form>
+        {% else %}
+          <!-- If the event is not saved by the user -->
+          <form action="{% url 'save-event' event.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Save Event</button>
+          </form>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}
