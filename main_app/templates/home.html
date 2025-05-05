@@ -8,7 +8,7 @@
 
 <link
   rel="stylesheet"
-  href="{% static 'css/collections/collection-index.css' %}"
+  href="{% static 'css/events/home.css' %}"
 />
 {% endblock %} {% block content %}
 
@@ -79,14 +79,7 @@
     </button>
   </div>
 
-  <section class="event-choices">
-    <div class="food">
-      <h1>Here are the events happening in your area!</h1>
-    </div>
-    <div class="craft">
-      <h1>Crafts</h1>
-    </div>
-  </section>
+  <h1>Here are the events happening in your area!</h1>
 
   <section class="card-container">
     {% for event in events %}
@@ -95,7 +88,7 @@
         <div class="card-content">
           <div class="card-img-container">
             <img
-              src="{% static 'images/lets_go_logo_1.svg' %}"
+              src="{% static 'images/lets_go_logo_2.svg' %}"
               alt="lets go logo"
             />
           </div>
