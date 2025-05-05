@@ -1,13 +1,72 @@
+/* Ensure the body and html take up the full height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Background */
+body {
+  background-image: url('/static/images/background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo fade-in */
+.logo-container {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Form fade-in */
+.login-container {
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 0.2s;  /* Optional: Delay the form animation slightly */
+}
+
+
+/* Form container */
 .form-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to bottom right, var(--gold), var(--yellow));
+  animation: fadeIn 0.5s ease-in-out;
+  align-items: center;
+  max-height: 80vh;  /* Ensure the form doesn't take up too much height */
+  overflow-y: auto;  /* Allow scrolling if content overflows */
 }
 
+/* Make sure the page header looks good */
+ h1 {
+  text-align: center;
+  color: #333;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+
 table {
-  padding: 0 40px;
   width: 100%;
+  padding: 0 40px;
   border-spacing: 0 20px;
+  margin-bottom: 20px;
 }
 
 th {
@@ -20,6 +79,8 @@ th {
 
 td {
   max-width: 60%;
+  font-size: var(--font-l); /* Or use a specific size if needed */
+  padding: 10px;
 }
 
 td > * {
@@ -33,35 +94,108 @@ td > textarea {
   font-family: inherit;
 }
 
-.btn {
-  align-self: flex-end;
-  margin-right: 40px;
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  color: #333;
 }
 
-/* Style for the checkbox label */
+input[type="checkbox"] {
+  width: auto;
+}
+
 .checkbox-label {
-  font-size: 18px; /* Adjust this to your desired font size */
+  font-size: 18px;
   font-weight: bold;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  line-height: 1.5; /* Adjust if needed */
+  line-height: 1.5;
 }
 
-/* Ensure the checkbox itself has proper spacing */
 .checkbox-label input {
   margin-right: 5px;
 }
 
-/* Style the 'Yes' text inside the span */
 .checkbox-label span {
-  font-size: 18px; /* Match this to the label font size */
-  font-weight: normal; /* Or adjust to your needs */
-  margin-left: 8px; /* Space between checkbox and text */
+  font-size: 18px;
+  font-weight: normal;
+  margin-left: 8px;
 }
 
-/* Ensure table data cells have appropriate font size */
-td {
-  font-size: var(--font-l); /* Or use a specific size if needed */
+.red-text {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-top: 10px;
 }
 
+input:invalid {
+  border-color: #e74c3c;
+}
+
+/* Submit Button */
+button.submit {
+  width: 100%;
+  max-width: 250px;
+  padding: 12px;
+  background-color: var(--pink);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  text-align: center;
+}
+
+button.submit:hover {
+  background-color: var(--orange);
+  transform: translateY(-2px);
+}
+
+button.submit:active {
+  background-color: #1f6fb2;
+  transform: translateY(0);
+}
+
+/* Vendor Fields Section */
+#vendor-fields {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--gold);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#vendor-fields table {
+  margin-top: 10px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  table td {
+    display: block;
+    width: 100%;
+  }
+
+  table td label {
+    margin-bottom: 5px;
+  }
+
+  button.submit {
+    font-size: 1.1rem;
+  }
+}

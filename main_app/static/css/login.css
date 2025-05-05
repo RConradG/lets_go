@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url('/static/images/background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+main > section {
+  width: 100%;
+  padding: 10px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-logo-container {
+  display: none;
+}
+
+.logo-container {
+  max-width: 375px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.login-container {
+  animation: fadeIn 2s ease-in-out;
+}
+
+
+.logo-container {
+  animation: fadeIn 2s ease-in-out;
+}
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.login h1 {
+  font-size: clamp(3.2rem, 3vw, 4.8rem);
+  margin: 10px 0;
+}
+
+.login > p {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 14px 0 0px;
+}
+
+.login label {
+  font-size: var(--font-reg);
+  margin-bottom: 6px;
+}
+
+.login input {
+  font-size: var(--font-l);
+  padding: 2px 4px;
+}
+
+.login .btn {
+  align-self: flex-end;
+  margin-right: 0;
+  margin-top: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    justify-content: space-around;
+  }
+
+  main > section {
+    width: 40%;
+  }
+
+  .logo-container {
+    max-width: 520px;
+  }
+}
+
+.event-container {
+  padding: 50px; /* optional for spacing */
+
+}
+
+h1 {
+  color: var(--gold);
+}
+
+/* Style form labels and inputs */
+.login p {
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.login label {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.login input {
+  width: 100%;
+  padding: 8px;
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  background-color: #ffff;
+  font-size: 1.75rem;
+  color: var(--black);
+}
+
+.login input:focus {
+  outline: none;
+  border-color: var(--pink);
+  box-shadow: 0 0 4px var(--pink);
+}
+
+.login .btn.submit {
+  background-color: var(--pink);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login .btn.submit:hover {
+  background-color: var(--orange);
+}
