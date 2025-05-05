@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'css/collections/collection-index.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/events/vendor-events.css' %}" />
 {% endblock %}
 
 {% block content %}
   {% if vendor %}
     {% if events %}
 
+    <h1 class="welcome-message">Welcome {{ vendor.user }}! Here are your the events you created.</h1>
       <section class="card-container">
-        <h1>Welcome {{ vendor.name }}</h1>
         {% for event in events %}
           <div class="card">
             <a href="{% url 'event-detail' event.id %}">
