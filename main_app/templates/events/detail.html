@@ -1,13 +1,10 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
+<link rel="stylesheet" href="{% static 'css/colors.css' %}">
 <link rel="stylesheet" href="{% static 'css/events/event-detail.css' %}" />
 {% endblock %} {% block content %}
-<section class="collection-container">
-  <div class="collection-img">
-  </div>
-</section>
 
 <div class="event-container">
-  <section class="items">
+  <section class="events">
     {% comment %}
     <div class="subsection-title">
       {% endcomment %}
@@ -36,19 +33,21 @@
       </form>
       {% endif %}
 
+
       <h1>{{ event.start_date }}</h1>
       <h1>{{ event.title }}</h1>
       <h2>Date and Time</h2>
-      <p></p>
-      <p></p>
-      <p></p>
+      <h3>{{ event.start_date }}</h3>
+      <h3>{{ event.start_time }}</h3>
+      
       <h2>About this Event</h2>
-      <h1>{{ event.description }}</h1>
+      <h3>{{ event.description }}</h3>
+      
       <h2>Location</h2>
-      <p>{{ event.location_name }}</p>
-      {{ event.location_street_number }} {{ event.location_street_name }} {{
-      event.location_city }} {{ event.location_state }} {{event.location_zipcode
-      }} {% if user.is_authenticated and vendor == event.vendor %}
+      <h3>{{ event.location_name }}</h3>
+      <h3>{{ event.location_street_number }} {{ event.location_street_name }} {{ event.location_city }} {{ event.location_state }}, {{ event.location_zipcode }}</h3>
+   
+      {% if user.is_authenticated and vendor == event.vendor %}
       <a href="{% url 'event-update' event.id %}" class="btn warn">Edit</a>
       <a href="{% url 'event-delete' event.id %}" class="btn danger">Delete</a>
       {% endif %}
