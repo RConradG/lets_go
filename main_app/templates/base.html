@@ -12,6 +12,7 @@
       href="/static/images/iCollect_logo.png"
     />
     <title>Let's Go!</title>
+    <link rel="stylesheet" href="{% static '/css/colors.css' %}">
     <link rel="stylesheet" href="{% static '/css/base.css' %}">
     {% block head %} 
     {% endblock %}
@@ -20,7 +21,7 @@
     <header>
       <div class="header-logo-container">
         <a href="/">
-          <img src="/static/images/lets_go_logo_1.svg" alt="Let's Go Logo" />
+          <img src="/static/images/lets_go_logo_2.svg" alt="Let's Go Logo" />
         </a>
       </div>
       <nav>
@@ -51,5 +52,20 @@
     <main>
       {% block content %}{% endblock %}
     </main>
+
+    {% comment %} <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Let's Go! | All Rights Reserved</p>
+        <nav class="footer-nav">
+          <ul>
+            <li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+            <li><a href="{% url 'terms-of-service' %}">Terms of Service</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+          </ul>
+        </nav> 
+      </div>
+    </footer> {% endcomment %}
+
+  </body>
   </body>
   </html>
