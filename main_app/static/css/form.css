@@ -1,11 +1,9 @@
-/* Ensure the body and html take up the full height */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
-/* Background */
 body {
   background-image: url('/static/images/background.svg');
   background-size: cover;
@@ -23,19 +21,16 @@ body {
   }
 }
 
-/* Logo fade-in */
 .logo-container {
   animation: fadeIn 0.8s ease-in-out;
 }
 
-/* Form fade-in */
 .login-container {
   animation: fadeIn 1s ease-in-out;
   animation-delay: 0.2s;  /* Optional: Delay the form animation slightly */
 }
 
 
-/* Form container */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -53,7 +48,6 @@ body {
   overflow-y: auto;  /* Allow scrolling if content overflows */
 }
 
-/* Make sure the page header looks good */
  h1 {
   text-align: center;
   color: #333;
@@ -131,9 +125,9 @@ input[type="checkbox"] {
   margin-left: 8px;
 }
 
-.red-text {
+.errorlist {
   color: #e74c3c;
-  font-size: 1rem;
+  font-size: 2rem;
   margin-top: 10px;
 }
 

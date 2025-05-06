@@ -46,14 +46,13 @@ main > section {
 
 
 .login-container {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 
 .logo-container {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 1.5s ease-in-out;
 }
-
 
 .login {
   display: flex;
