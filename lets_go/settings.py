@@ -13,12 +13,11 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
-import environ
+
 import cloudinary
 import dj_database_url
 
-environ.Env()
-environ.Env.read_env()
+
 
 load_dotenv()
 
