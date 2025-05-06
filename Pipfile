@@ -13,6 +13,7 @@ dj-database-url = "*"
 cloudinary = "*"
 django-cloudinary-storage = "*"
 django-phonenumber-field = "*"
+phonenumbers = "*"
 
 [dev-packages]
 
