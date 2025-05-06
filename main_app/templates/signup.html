@@ -2,22 +2,21 @@
 {% load static %}
 {% block content %}
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/colors.css' %}" />
-<link rel="stylesheet" href="{% static 'css/form.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/colors.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
 {% endblock %} 
-
 
 <h1>Sign Up</h1>
 
+{% comment %} {% if error_message %} {% endcomment %}
+  {% comment %} <p class="red-text">{{ error_message }}</p> {% endcomment %}
+{% comment %} {% endif %} {% endcomment %}
 
-{% if error_message %}
-  <p class="red-text">{{ error_message }}</p>
-{% endif %}
 
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
-    {{ form.username.errors }}
+    <p class="red-text">{{ form.username.errors }}</p>
     <tr><td>{{ form.username.label_tag }}</td><td>{{ form.username }}</td></tr>
 
     {{ form.email.errors }}
