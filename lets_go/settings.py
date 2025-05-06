@@ -41,7 +41,6 @@ ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'main_app',
-    'phonenumber_field',
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
