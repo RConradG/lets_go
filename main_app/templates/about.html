@@ -1,12 +1,20 @@
 {% extends 'base.html' %} 
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+  <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>About Let's Go!</h1>
-<hr />
-<p class="page-content">
-  Let's Go! is a dynamic event discovery platform designed to help individuals find, share, and attend local pop-up events,
-  ranging from vibrant food festivals and artisan markets to unique cultural gatherings and exciting community experiences.
-  Whether you're into gourmet food, handcrafted art, or local celebrations, Let’s Go! brings together the best of your
-  local scene and connects you with events that match your passions. Our mission is to make exploring your city easy, exciting,
-  and fulfilling by helping you discover experiences that enrich your life and bring people together.
-</p>
+<main>
+  <h1>About Let's Go!</h1>
+  <hr />
+  <p class="page-content">
+    Let's Go! is a dynamic event discovery platform designed to help individuals find, share, and attend local pop-up events,
+    ranging from vibrant food festivals and artisan markets to unique cultural gatherings and exciting community experiences.
+    Whether you're into gourmet food, handcrafted art, or local celebrations, Let’s Go! brings together the best of your
+    local scene and connects you with events that match your passions. Our mission is to make exploring your city easy, exciting,
+    and fulfilling by helping you discover experiences that enrich your life and bring people together.
+  </p>
+</main>
 {% endblock %}
