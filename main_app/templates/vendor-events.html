@@ -9,14 +9,14 @@
   {% if vendor %}
     {% if events %}
 
-    <h1 class="welcome-message">Welcome {{ vendor.user }}! Here are your the events you created.</h1>
+    <h1 class="welcome-message">Welcome {{ vendor.user }}! Here are the events you created.</h1>
       <section class="card-container">
         {% for event in events %}
           <div class="card">
             <a href="{% url 'event-detail' event.id %}">
               <div class="card-content">
                 <div class="card-img-container">
-                  <img src="{% static 'images/letsgo_logo_1.jpg' %}" alt="lets go logo" />
+                  <img src="{% static 'images/lets_go_logo_2.svg' %}" alt="lets go logo" />
                 </div>
                 <h2 class="card-title">{{ event.title }}</h2>
                 <p><small>{{ event.description }}</small></p>
