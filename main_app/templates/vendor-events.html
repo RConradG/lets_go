@@ -16,7 +16,11 @@
             <a href="{% url 'event-detail' event.id %}">
               <div class="card-content">
                 <div class="card-img-container">
-                  <img src="{% static 'images/lets_go_logo_2.svg' %}" alt="lets go logo" />
+                  {% if event.image %}
+                    <img class="responsive-img card-panel" src="{{ event.image.url }}" />
+                  {% else %}
+                    <img src="{% static 'images/lets_go_logo_2.svg' %}" alt="Let's Go logo" class="responsive-img card-panel" />
+                  {% endif %}
                 </div>
                 <h2 class="card-title">{{ event.title }}</h2>
                 <p><small>{{ event.description }}</small></p>

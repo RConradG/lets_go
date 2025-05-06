@@ -1,38 +1,19 @@
-{% extends 'base.html' %} {% load static %} {% block head %}
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
 <link rel="stylesheet" href="{% static 'css/colors.css' %}">
 <link rel="stylesheet" href="{% static 'css/events/event-detail.css' %}" />
-{% endblock %} {% block content %}
+{% endblock %}
 
+{% block content %}
 <div class="event-container">
   <section class="events">
-    {% comment %}
-    <div class="subsection-title">
-      {% endcomment %}
-      {% if event.image_set.all %}
-        {% for image in event.image_set.all %}
-          <img class="responsive-img card-panel" src="{{ image.url }}" />
-        {% endfor %}
+      {% if event.image %}
+          <img class="responsive-img card-panel" src="{{ event.image.url }}" />
       {% else %}
-        <img
-          src="{% static 'images/lets_go_logo_2.svg' %}"
-          alt="Let's Go logo"
-          class="responsive-img card-panel"
-        />
-      {% endif %} 
-      {% if user.is_authenticated and vendor == event.vendor %}
-      <form
-        action="{% url 'add-image' event.id %}"
-        enctype="multipart/form-data"
-        method="POST"
-        class="card-panel"
-      >
-        {% csrf_token %}
-        <input type="file" name="photo-file" />
-        <br /><br />
-        <button type="submit" class="btn">Upload Photo</button>
-      </form>
+          <img src="{% static 'images/lets_go_logo_2.svg' %}" alt="Let's Go logo" class="responsive-img card-panel" />
       {% endif %}
-
 
       <h1>{{ event.start_date }}</h1>
       <h1>{{ event.title }}</h1>
