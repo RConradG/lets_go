@@ -6,9 +6,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Vendor, Event, Posts, Follows, Image
+from .models import Vendor, Event, Image
 from .forms import EventForm, CustomSignUpForm
-from django.http import Http404
 import uuid
 import boto3
 import os
@@ -89,8 +88,8 @@ def event_detail(request, event_id):
             "vendor": vendor
         },
     )
-
-
+    
+@login_required
 def add_event(request):
     if request.method == "POST":
         form = EventForm(request.POST)
@@ -110,8 +109,9 @@ def add_event(request):
                 )
     else:
         form = EventForm()
+        vendor = Vendor.objects.filter(user=request.user).first()
 
-    return render(request, "events/event_form.html", {"form": form})
+    return render(request, "events/event_form.html", {"form": form, "vendor": vendor})
 
 
 def signup(request):
@@ -138,6 +138,7 @@ def post_login_redirect(request):
     except Vendor.DoesNotExist:
         # Otherwise, send them to the regular user view
         return redirect("user-events")
+
 
 def add_image(request, event_id):
     image_file = request.FILES.get('image-file', None)
@@ -177,24 +178,6 @@ class Home(LoginView):
 
 class Login(LoginView):
     template_name = "login.html"
-
-
-# class CollectionCreate(LoginRequiredMixin, CreateView):
-#     model = Collection
-#     fields = ['name', 'description']
-
-#     def form_valid(self, form):
-#         form.instance.user = self.request.user
-#         return super().form_valid(form)
-
-# class CollectionUpdate(LoginRequiredMixin, UpdateView):
-#     model = Collection
-#     fields = ['description']
-
-# class CollectionDelete(LoginRequiredMixin, DeleteView):
-#     model = Collection
-#     success_url = '/collections/'
-
 
 class EventUpdate(UpdateView):
     model = Event
