@@ -1,5 +1,4 @@
 from django.db import models
-from django import forms
 from django.urls import reverse
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
@@ -35,8 +34,6 @@ class Vendor(models.Model):
     primary_contact_name = models.CharField(max_length=100)
     business_name = models.CharField(max_length=100)
     business_email = models.EmailField(unique=False)
-    # businessAddress = models.ForeignKey(Address, on_delete=models.CASCADE, related_name='business_address')
-    # phone_number = PhoneNumberField(region="US")
 
 
 class Event(models.Model):
