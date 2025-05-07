@@ -4,7 +4,11 @@
 
 <div class="page-header">
   <h1>Delete Event</h1>
-  <img src="{% static 'images/logo.png' %}" alt="iCollect logo" />
+  {% if event.image %}
+    <img class="responsive-img card-panel" src="{{ event.image.url }}" />
+  {% else %}
+    <img src="{% static 'images/lets_go_logo_2.svg' %}" alt="Let's Go logo" class="responsive-img card-panel" />
+  {% endif %}
 </div>
 
 <h2>Are you sure you want to delete the event '{{ event.title }}'?</h2>
