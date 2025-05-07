@@ -12,13 +12,9 @@
   border: var(--borders);
   box-shadow: var(--card-box-shadow);
   position: relative;
-  /* background: linear-gradient(135deg, var(--grey-cream-90), var(--dusty-cream)); */
-  /* border: 1px solid var(--lavender-soft); */
   border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
-  /* color: inherit; */
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-width: 300px;
   min-height: 400px;

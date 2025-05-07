@@ -19,8 +19,8 @@
 
 .responsive-img {
   width: 100%;
-  height: auto; /* Allow image to adjust its height based on width */
-  object-fit: cover; /* Keep aspect ratio but cover the space */
+  height: auto;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
@@ -126,8 +126,8 @@ button[type="submit"]:hover {
   }
 
   .responsive-img {
-    max-height: 500px; /* Adjust to fit larger screens */
-    object-fit: cover; /* Keeps the image cover without distortion */
+    max-height: 500px;
+    object-fit: cover;
   }
 }
 
@@ -137,6 +137,6 @@ button[type="submit"]:hover {
   }
 
   .responsive-img {
-    max-height: 600px; /* Even larger max-height for very large screens */
+    max-height: 600px;
   }
 }
