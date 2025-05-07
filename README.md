@@ -33,14 +33,7 @@ Whether you're:
 
 * Visit the web app: [Let’s Go!](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/)
 * Check out the repo: [Let’s Go!](https://github.com/RConradG/lets_go.git)
-* Explore our planning materials: [Project Board](https://trello.com/invite/b/680bbe72b3e36f87cb25931d/ATTI0086de135e0194457fb3997f0b0370c34BCEDE61/lets-go)
-
----
-
-## 📌 Feature Highlights
-
-* [Event Listings](./docs/events.md)
-* [User Sign-Up & Auth](./docs/auth.md)
+* Explore the planning materials: [Trello Board](https://trello.com/invite/b/680bbe72b3e36f87cb25931d/ATTI0086de135e0194457fb3997f0b0370c34BCEDE61/lets-go)
 
 ---
 
@@ -84,4 +77,4 @@ Whether you're:
 * Vendor dashboard with analytics
 * Event recommendation engine using user preferences
 * In-app messaging between users and vendors
-* Search Feature
+* Search Feature for Events
