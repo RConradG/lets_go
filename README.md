@@ -17,7 +17,7 @@ In a world where people crave authentic, real-world interactions, **Let’s Go!*
 * Share their favorite pop-ups and festivals with friends
 * Connect with others who share their interests and passions
 
-We built Let’s Go! to make exploring your city easy, exciting, and fulfilling. Our mission is to **bring people together through meaningful, local experiences** that support small businesses, highlight cultural creativity, and encourage a sense of community.
+I built Let’s Go! to make exploring your city easy, exciting, and fulfilling. Our mission is to **bring people together through meaningful, local experiences** that support small businesses, highlight cultural creativity, and encourage a sense of community.
 
 Whether you're:
 
