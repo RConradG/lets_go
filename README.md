@@ -31,8 +31,8 @@ Whether you're:
 
 ## 🚀 Getting Started
 
-* Visit the web app: [Let’s Go!](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/))
-* Check out the repo: [Let’s Go! Backend](https://github.com/RConradG/lets_go.git)
+* Visit the web app: [Let’s Go!](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/)
+* Check out the repo: [Let’s Go!](https://github.com/RConradG/lets_go.git)
 * Explore our planning materials: [Project Board](https://trello.com/invite/b/680bbe72b3e36f87cb25931d/ATTI0086de135e0194457fb3997f0b0370c34BCEDE61/lets-go)
 
 ---
