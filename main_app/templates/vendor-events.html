@@ -9,7 +9,7 @@
   {% if vendor %}
     {% if events %}
 
-    <h1 class="welcome-message">Welcome {{ vendor.user }}! Here are the events you created.</h1>
+    <h1 class="vendor-message">Welcome {{ vendor.user }}! Here are the events you created.</h1>
       <section class="card-container">
         {% for event in events %}
           <div class="card">
@@ -32,9 +32,9 @@
         {% endfor %}
       </section>
     {% else %}
-      <p>No events found for this vendor. Add Some Events!</p>
+      <h1 class="vendor-message">No events found for this vendor. Add Some Events!</p>
     {% endif %}
   {% else %}
-    <p>You must be a vendor to view events.</p>
+    <h1 class="vendor-message">You must be a vendor to view events.</p>
   {% endif %}
 {% endblock %}
