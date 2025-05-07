@@ -31,7 +31,7 @@ Whether you're:
 
 ## 🚀 Getting Started
 
-* Visit the web app: [Let’s Go!]([https://letsgo-events.netlify.app/](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/))
+* Visit the web app: [Let’s Go!](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/))
 * Check out the repo: [Let’s Go! Backend](https://github.com/your-username/letsgo-backend)
 * Explore our planning materials: [Project Board](https://trello.com/b/example/letsgo-project)
 
