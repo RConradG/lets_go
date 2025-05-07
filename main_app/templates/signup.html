@@ -8,27 +8,23 @@
 
 <h1>Sign Up</h1>
 
-{% comment %} {% if error_message %} {% endcomment %}
-  {% comment %} <p class="red-text">{{ error_message }}</p> {% endcomment %}
-{% comment %} {% endif %} {% endcomment %}
-
-
 <form action="" method="post" class="form-container" autocomplete="off">
   {% csrf_token %}
   <table>
     <p class="red-text">{{ form.username.errors }}</p>
     <tr><td>{{ form.username.label_tag }}</td><td>{{ form.username }}</td></tr>
-
-    {{ form.email.errors }}
+    
+    <p class="red-text">{{ form.email.errors }}</p>
     <tr><td>{{ form.email.label_tag }}</td><td>{{ form.email }}</td></tr>
-
-    {{ form.password1.errors }}
+    
+    <p class="red-text">{{ form.password1.errors }}</p>
     <tr><td>{{ form.password1.label_tag }}</td><td>{{ form.password1 }}</td></tr>
-
-    {{ form.password2.errors }}
+    
+    <p class="red-text">{{ form.password2.errors }}</p>
     <tr><td>{{ form.password2.label_tag }}</td><td>{{ form.password2 }}</td></tr>
+    
+    <p class="red-text">{{ form.is_vendor.errors }}</p>
 
-    {{ form.is_vendor.errors }}
     <tr>
       <td>
         <label class="checkbox-label">

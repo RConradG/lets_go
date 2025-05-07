@@ -27,9 +27,8 @@ body {
 
 .login-container {
   animation: fadeIn 1s ease-in-out;
-  animation-delay: 0.2s;  /* Optional: Delay the form animation slightly */
+  animation-delay: 0.2s;
 }
-
 
 .form-container {
   display: flex;
@@ -44,9 +43,10 @@ body {
   background: linear-gradient(to bottom right, var(--gold), var(--yellow));
   animation: fadeIn 0.5s ease-in-out;
   align-items: center;
-  max-height: 80vh;  /* Ensure the form doesn't take up too much height */
-  overflow-y: auto;  /* Allow scrolling if content overflows */
+  max-height: 80vh; 
+  overflow-y: auto;  
 }
+
 
  h1 {
   text-align: center;
@@ -73,7 +73,7 @@ th {
 
 td {
   max-width: 60%;
-  font-size: var(--font-l); /* Or use a specific size if needed */
+  font-size: var(--font-l);
   padding: 10px;
 }
 
