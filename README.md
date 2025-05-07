@@ -32,8 +32,8 @@ Whether you're:
 ## 🚀 Getting Started
 
 * Visit the web app: [Let’s Go!](https://lets-go-v1-a8d086ee6ddf.herokuapp.com/))
-* Check out the repo: [Let’s Go! Backend](https://github.com/your-username/letsgo-backend)
-* Explore our planning materials: [Project Board](https://trello.com/b/example/letsgo-project)
+* Check out the repo: [Let’s Go! Backend](https://github.com/RConradG/lets_go.git)
+* Explore our planning materials: [Project Board](https://trello.com/invite/b/680bbe72b3e36f87cb25931d/ATTI0086de135e0194457fb3997f0b0370c34BCEDE61/lets-go)
 
 ---
 
@@ -50,7 +50,7 @@ Whether you're:
 
 * [Django Documentation](https://docs.djangoproject.com/)
 * [Bootstrap Carousel](https://getbootstrap.com/docs/5.3/components/carousel/)
-* [Unsplash for Images](https://unsplash.com/)
+* [Canva for Logo](https://www.canva.com/)
 
 ---
 
@@ -73,9 +73,7 @@ Whether you're:
 ### Others
 
 * Cloudinary for media storage
-* Crispy Forms for better form rendering
-* Netlify for front-end deployment
-* Heroku or Railway for back-end deployment
+* Heroku for deployment
 
 ---
 
@@ -86,7 +84,4 @@ Whether you're:
 * Vendor dashboard with analytics
 * Event recommendation engine using user preferences
 * In-app messaging between users and vendors
-
----
-
-Let me know if you'd like help writing any of the linked pages (like `events.md` or `vendors.md`) or designing the logo section!
+* Search Feature
